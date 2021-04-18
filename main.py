@@ -12,8 +12,6 @@ bot = telebot.TeleBot(config.TOKEN)
 
 @bot.message_handler(commands=['start'])
 def welcome(message):
-  #  sti = open('static/sticker.webp', 'rb')
-  #  bot.send_sticker(message.chat.id, sti)
 
 
 # keyboard
@@ -80,13 +78,6 @@ def callback_inline(call):
                 bot.send_message(call.message.chat.id, 'пока пусто')
 
 
-            # remove inline buttons
-            #bot.edit_message_text(chat_id=call.message.chat.id, message_id=call.message.message_id, text="😊 Как делак?",
-                             #     reply_markup=None)
-
-            # show alert
-            bot.answer_callback_query(callback_query_id=call.id, show_alert=False,
-                                      text="123")
 
     except Exception as e:
         print(repr(e))
